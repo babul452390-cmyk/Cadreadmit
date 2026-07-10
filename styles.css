@@ -1,0 +1,121 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * CadreAdmit design system — BCS প্রস্তুতি প্ল্যাটফর্ম
+ * Cream + deep-ink + vital red + mint + gold.
+ * All colors are semantic tokens.
+ */
+
+@theme inline {
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 28px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-bg-alt: var(--bg-alt);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-vital: var(--vital);
+  --color-vital-dark: var(--vital-dark);
+  --color-mint: var(--mint);
+  --color-mint-dark: var(--mint-dark);
+  --color-gold: var(--gold);
+  --color-gold-dark: var(--gold-dark);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-mid: var(--navy-mid);
+  --color-primary: var(--vital);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: var(--bg-alt);
+  --color-secondary-foreground: var(--ink);
+  --color-muted: var(--bg-alt);
+  --color-muted-foreground: var(--ink-soft);
+  --color-accent: var(--mint);
+  --color-accent-foreground: #ffffff;
+  --color-destructive: var(--vital);
+  --color-destructive-foreground: #ffffff;
+  --color-border: var(--line);
+  --color-input: var(--line);
+  --color-ring: var(--mint);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--ink);
+  --font-display: "Anek Bangla", "Public Sans", sans-serif;
+  --font-body: "Hind Siliguri", "Public Sans", sans-serif;
+  --font-num: "Public Sans", "Hind Siliguri", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+}
+
+:root {
+  --background: #f5f2e6;
+  --bg-alt: #ece6d2;
+  --surface: #ffffff;
+  --foreground: #10241c;
+  --ink: #10241c;
+  --ink-soft: #4a6656;
+  --ink-faint: #8fa396;
+  --line: #dcd5be;
+  --line-soft: #eae5d4;
+  --vital: #b91c2c;
+  --vital-dark: #8f1521;
+  --mint: #3e8b4f;
+  --mint-dark: #2e6b3b;
+  --gold: #b8912f;
+  --gold-dark: #96751f;
+  --navy-deep: #0a1f16;
+  --navy-mid: #163a28;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-body);
+    background: var(--color-background);
+    color: var(--color-foreground);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, .disp {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+  }
+  .num { font-family: var(--font-num); }
+  .mono { font-family: var(--font-mono); }
+  ::selection { background: var(--vital); color: #fff; }
+  ::-webkit-scrollbar { width: 9px; height: 9px; }
+  ::-webkit-scrollbar-thumb { background: #d3cbae; border-radius: 10px; }
+  :focus-visible { outline: 2.5px solid var(--vital); outline-offset: 2px; }
+}
+
+@utility btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-white transition;
+  background: var(--vital);
+  box-shadow: 0 6px 16px rgba(185, 28, 44, 0.28);
+}
+@utility btn-primary-hover {
+  background: var(--vital-dark);
+}
+
+@utility eyebrow {
+  @apply inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-medium;
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  color: var(--mint-dark);
+  background: rgba(62, 139, 79, 0.1);
+}
